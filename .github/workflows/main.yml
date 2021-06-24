@@ -1,20 +1,21 @@
-name: CI
+name: DS
 
 on:
   push:
     branches:
+    - main
     - master
     - release/*
 
 jobs:
-  build_icolors:
+  build:
     runs-on: ubuntu-16.04
     steps:
     - uses: actions/checkout@v1
     - name: Build and deploy the Docker image
       env: 
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        APP_NAME: ${{ 'icolors' }}
+        APP_NAME: ${{ 'DSapi' }}
       run: |
         cd ./ASPNetCoreLabs/HerokuContainer
         docker login --username=_ --password=$HEROKU_API_KEY registry.heroku.com
