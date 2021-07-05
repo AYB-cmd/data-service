@@ -9,7 +9,7 @@ FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
 
 WORKDIR /src
 COPY ["FurnitureApi/DataServiceApi.csproj", "FurnitureApi/"]
-COPY ["TestDataServicesApi/TestDataServicesApi.csproj", "TestDataServicesApi/"]
+
 RUN dotnet restore "FurnitureApi/DataServiceApi.csproj"
 COPY . .
 
@@ -20,10 +20,7 @@ RUN dotnet build "DataServiceApi.csproj" -c Release -o /app/build
 
 
 
-# testing
-FROM build AS testing
-WORKDIR /src/TestDataServicesApi
-RUN dotnet test
+
 
 FROM build AS publish
 RUN dotnet publish "DataServiceApi.csproj" -c Release -o /app/publish

@@ -1,5 +1,6 @@
 build:
   docker:
-    web: docker-compose.yml
+    web: Dockerfile
+    workdir: FurnitureApi/Dockerfile
 run:
   web: bundle exec puma -C config/puma.rb
