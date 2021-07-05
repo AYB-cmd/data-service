@@ -8,18 +8,17 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
 
 WORKDIR /src
-COPY *.sln .
 COPY ["FurnitureApi/DataServiceApi.csproj", "FurnitureApi/"]
 COPY ["TestDataServicesApi/TestDataServicesApi.csproj", "TestDataServicesApi/"]
 RUN dotnet restore "FurnitureApi/DataServiceApi.csproj"
 COPY . .
+
+
+# build
 WORKDIR "/src/FurnitureApi"
 RUN dotnet build "DataServiceApi.csproj" -c Release -o /app/build
 
 
-
-
-COPY . .
 
 # testing
 FROM build AS testing
