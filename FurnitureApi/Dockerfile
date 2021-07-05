@@ -6,9 +6,11 @@ EXPOSE 80
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
+
 WORKDIR /src
-COPY ["../TestDataServicesApi/*.csproj" ,"TestDataServicesApi/"]
+COPY *.sln .
 COPY ["FurnitureApi/DataServiceApi.csproj", "FurnitureApi/"]
+COPY ["TestDataServicesApi/TestDataServicesApi.csproj", "TestDataServicesApi/"]
 RUN dotnet restore "FurnitureApi/DataServiceApi.csproj"
 COPY . .
 WORKDIR "/src/FurnitureApi"
@@ -16,7 +18,11 @@ RUN dotnet build "DataServiceApi.csproj" -c Release -o /app/build
 
 
 
-#Testing
+
+COPY . .
+
+# testing
+FROM build AS testing
 WORKDIR /src/TestDataServicesApi
 RUN dotnet test
 

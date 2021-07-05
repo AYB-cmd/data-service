@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "F8OItq4izGQ6skGMZiGzJTKuGuDUZOOLT9cvojfcgCcjk/NW5oU3mBr1vSx0HY0Up19H8PpDu+Lw/umOUGFJ0g==",
+  "dgSpecHash": "EEqFvWBNtb23ujiN4UqXzN9g5IL7T9zquXA11NH0vefNhWWfVpAMovo990D2ceARMIxUM0IB4VvvZxZsCOvo0A==",
   "success": true,
   "projectFilePath": "C:\\Users\\youcode\\Desktop\\ProductService\\TestDataServicesApi\\TestDataServicesApi.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "C:\\Users\\youcode\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\youcode\\.nuget\\packages\\microsoft.testplatform.objectmodel\\16.9.4\\microsoft.testplatform.objectmodel.16.9.4.nupkg.sha512",
     "C:\\Users\\youcode\\.nuget\\packages\\microsoft.testplatform.testhost\\16.9.4\\microsoft.testplatform.testhost.16.9.4.nupkg.sha512",
+    "C:\\Users\\youcode\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.14\\microsoft.visualstudio.azure.containers.tools.targets.1.10.14.nupkg.sha512",
     "C:\\Users\\youcode\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\youcode\\.nuget\\packages\\moq\\4.16.1\\moq.4.16.1.nupkg.sha512",
     "C:\\Users\\youcode\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",

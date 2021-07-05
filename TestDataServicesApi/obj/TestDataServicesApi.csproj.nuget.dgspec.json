@@ -48,6 +48,10 @@
               "target": "Package",
               "version": "[16.9.4, )"
             },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.10.14, )"
+            },
             "Moq": {
               "target": "Package",
               "version": "[4.16.1, )"

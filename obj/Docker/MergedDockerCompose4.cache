@@ -1,46 +1,21 @@
 services:
+  Testing:
+    build:
+      context: C:\Users\youcode\Desktop\ProductService
+      dockerfile: TestDataServicesApi/Dockerfile
+    image: Testing
   dataserviceapi:
     build:
       context: C:\Users\youcode\Desktop\ProductService
       dockerfile: FurnitureApi/Dockerfile
-      labels:
-        com.microsoft.created-by: visual-studio
-        com.microsoft.visual-studio.project-name: DataServiceApi
-      target: base
-    container_name: DataServiceApi
-    entrypoint: tail -f /dev/null
     environment:
       ASPNETCORE_ENVIRONMENT: Development
-      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
       ASPNETCORE_URLS: https://+:443;http://+:80
-      DOTNET_USE_POLLING_FILE_WATCHER: '1'
-      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
-    image: dataserviceapi:dev
-    labels:
-      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
-        --additionalProbingPath /root/.nuget/fallbackpackages  "/app/bin/Debug/netcoreapp3.1/ProductService.dll"'
-      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
-        dotnet); then kill $$PID; fi"
-      com.microsoft.visualstudio.debuggee.program: dotnet
-      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    image: dataserviceapi
     ports:
     - target: 80
     - target: 443
-    tty: true
     volumes:
-    - C:\Users\youcode\Desktop\ProductService\FurnitureApi:/app:rw
-    - C:\Users\youcode\vsdbg\vs2017u5:/remote_debugger:rw
     - C:\Users\youcode\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
     - C:\Users\youcode\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
-    - C:\Program Files (x86)\Microsoft\Xamarin\NuGet:/root/.nuget/fallbackpackages:ro
-    - C:\Users\youcode\.nuget\packages:/root/.nuget/packages:ro
-    - C:\Users\youcode\Desktop\ProductService:/src:rw
-  sqldata:
-    environment:
-      ACCEPT_EULA: "Y"
-      SA_PASSWORD: vV5r9tn0M4@
-    image: mcr.microsoft.com/mssql/server:2019-latest
-    ports:
-    - published: 1450
-      target: 1433
 version: '3.4'

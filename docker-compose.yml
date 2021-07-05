@@ -7,6 +7,8 @@ services:
       context: .
       dockerfile: FurnitureApi/Dockerfile
 
+
+
   sqldata:
     image: mcr.microsoft.com/mssql/server:2019-latest
     environment:
@@ -14,3 +16,4 @@ services:
       - ACCEPT_EULA=Y
     ports:
       - "1450:1433"
+

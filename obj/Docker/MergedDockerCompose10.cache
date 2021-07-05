@@ -1,30 +1,4 @@
 services:
-  Testing:
-    build:
-      context: C:\Users\youcode\Desktop\ProductService
-      dockerfile: TestDataServicesApi/Dockerfile
-      labels:
-        com.microsoft.created-by: visual-studio
-        com.microsoft.visual-studio.project-name: TestDataServicesApi
-      target: build
-    container_name: TestDataServicesApi
-    entrypoint: tail -f /dev/null
-    environment:
-      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
-    image: Testing:dev
-    labels:
-      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
-        --additionalProbingPath /root/.nuget/fallbackpackages  "/app/bin/Debug/netcoreapp3.1/TestDataServicesApi.dll"'
-      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
-        dotnet); then kill $$PID; fi"
-      com.microsoft.visualstudio.debuggee.program: dotnet
-      com.microsoft.visualstudio.debuggee.workingdirectory: /app
-    tty: true
-    volumes:
-    - C:\Users\youcode\Desktop\ProductService\TestDataServicesApi:/app:rw
-    - C:\Users\youcode\vsdbg\vs2017u5:/remote_debugger:rw
-    - C:\Program Files (x86)\Microsoft\Xamarin\NuGet:/root/.nuget/fallbackpackages:ro
-    - C:\Users\youcode\.nuget\packages:/root/.nuget/packages:ro
   dataserviceapi:
     build:
       context: C:\Users\youcode\Desktop\ProductService
@@ -61,4 +35,38 @@ services:
     - C:\Program Files (x86)\Microsoft\Xamarin\NuGet:/root/.nuget/fallbackpackages:ro
     - C:\Users\youcode\.nuget\packages:/root/.nuget/packages:ro
     - C:\Users\youcode\Desktop\ProductService:/src:rw
+  sqldata:
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: vV5r9tn0M4@
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+    - published: 1450
+      target: 1433
+  testing:
+    build:
+      context: C:\Users\youcode\Desktop\ProductService
+      dockerfile: TestDataServicesApi/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: TestDataServicesApi
+      target: build
+    container_name: TestDataServicesApi
+    entrypoint: tail -f /dev/null
+    environment:
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
+    image: testing:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages  "/app/bin/Debug/netcoreapp3.1/TestDataServicesApi.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    tty: true
+    volumes:
+    - C:\Users\youcode\Desktop\ProductService\TestDataServicesApi:/app:rw
+    - C:\Users\youcode\vsdbg\vs2017u5:/remote_debugger:rw
+    - C:\Program Files (x86)\Microsoft\Xamarin\NuGet:/root/.nuget/fallbackpackages:ro
+    - C:\Users\youcode\.nuget\packages:/root/.nuget/packages:ro
 version: '3.4'

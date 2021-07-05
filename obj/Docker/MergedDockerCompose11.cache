@@ -1,9 +1,4 @@
 services:
-  Testing:
-    build:
-      context: C:\Users\youcode\Desktop\ProductService
-      dockerfile: TestDataServicesApi/Dockerfile
-    image: Testing
   dataserviceapi:
     build:
       context: C:\Users\youcode\Desktop\ProductService
