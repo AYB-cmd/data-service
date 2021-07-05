@@ -1,3 +1,6 @@
+C:\Users\youcode\Desktop\ProductService\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\Users\youcode\Desktop\ProductService\bin\Debug\ProductService.Views.dll
+C:\Users\youcode\Desktop\ProductService\bin\Debug\ProductService.Views.pdb
 C:\Users\youcode\Desktop\ProductService\bin\Debug\ProductService.deps.json
 C:\Users\youcode\Desktop\ProductService\bin\Debug\ProductService.runtimeconfig.json
 C:\Users\youcode\Desktop\ProductService\bin\Debug\ProductService.runtimeconfig.dev.json
@@ -33,7 +36,4 @@ C:\Users\youcode\Desktop\ProductService\bin\Debug\Microsoft.Data.SqlClient.dll
 C:\Users\youcode\Desktop\ProductService\bin\Debug\Microsoft.IdentityModel.Logging.dll
 C:\Users\youcode\Desktop\ProductService\bin\Debug\ProductService.pdb
 C:\Users\youcode\Desktop\ProductService\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
-C:\Users\youcode\Desktop\ProductService\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 C:\Users\youcode\Desktop\ProductService\obj\Debug\docker-compose.dcproj.CopyComplete
-C:\Users\youcode\Desktop\ProductService\bin\Debug\ProductService.Views.dll
-C:\Users\youcode\Desktop\ProductService\bin\Debug\ProductService.Views.pdb

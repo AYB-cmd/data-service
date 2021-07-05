@@ -1,0 +1,24 @@
+services:
+  dataserviceapi:
+    build:
+      context: C:\Users\youcode\Desktop\ProductService
+      dockerfile: ../Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: dataserviceapi
+    ports:
+    - target: 80
+    - target: 443
+    volumes:
+    - C:\Users\youcode\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\youcode\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+  sqldata:
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: vV5r9tn0M4@
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+    - published: 1450
+      target: 1433
+version: '3.4'
