@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  dataserviceapi:
+    image: ${DOCKER_REGISTRY-}dataserviceapi
+    build:
+      context: .
+      dockerfile: FurnitureApi/Dockerfile
+
+  sqldata:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      - SA_PASSWORD=vV5r9tn0M4@
+      - ACCEPT_EULA=Y
+    ports:
+      - "1450:1433"

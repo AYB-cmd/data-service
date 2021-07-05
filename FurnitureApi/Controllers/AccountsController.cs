@@ -28,6 +28,13 @@ namespace FurnitureApi.Controllers
             _dbContext = dbContext;
         }
 
+        [HttpGet]
+        [AllowAnonymous]
+        public  string test()
+        {
+            return "Worked!";
+        }
+
         [HttpPost]
         [AllowAnonymous]
         public async Task<IActionResult> Register(User user)

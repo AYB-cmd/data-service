@@ -21,5 +21,9 @@ namespace FurnitureApi.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
         public DbSet<Complaint> Complaints { get; set; }    
+   /*     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(@"data source=localhost,5020;initial catalog=Mydb;persist security info=True;user id=sa;Password=yourStrong(!)Password;");
+        }*/
     }
 }
